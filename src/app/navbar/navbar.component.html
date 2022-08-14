@@ -1,0 +1,29 @@
+<nav class="bg-gray-800 p-4">
+  <div class="container mx-auto">
+    <div class="flex items-center justify-between">
+      <div class="logo">
+        <img
+          class="h-10 w-auto"
+          src="../../assets/images/logo.png"
+          alt="Workflow"
+        />
+      </div>
+      <button type="button " class="flex md:hidden">
+        <fa-icon [icon]="faBars" class="text-white text-2xl"></fa-icon>
+      </button>
+      <div
+        class="hidden md:flex text-gray-200 space-x-4 font-semibold items-center justify-start"
+      >
+        <a routerLink="/">Home</a>
+        <a routerLink="about">About</a>
+        <a routerLink="contact">Contact</a>
+        <a
+          routerLink="register"
+          class="bg-indigo-600 py-2 px-4 rounded shadow-sm whitespace-nowrap hover:bg-indigo-700"
+        >
+          Login / Register
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

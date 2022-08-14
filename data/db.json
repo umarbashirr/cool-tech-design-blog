@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "postTitle": "How to learn react?",
+      "postImage": "https://source.unsplash.com/random/1968x1202",
+      "postCategory": ["coding", "featured"],
+      "postReadingTime": 3,
+      "postAuthor": "Admin",
+      "postCreated": "Sun Aug 14 2022 13:52:49 GMT+0530 (India Standard Time)",
+      "postDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rhoncus egestas leo, quis luctus ex semper nec. Morbi vitae elementum libero. Curabitur massa nisi, venenatis quis dolor id, tristique fermentum ex. Integer odio diam, rutrum ac quam id, placerat scelerisque elit. Maecenas vehicula vulputate mauris, ut dapibus ipsum auctor ut. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse eget consectetur ex, non porttitor erat. Donec pellentesque tellus risus. Vestibulum interdum sit amet lectus eu interdum. Integer sed nulla vitae quam mattis posuere et vitae erat. In sodales sem quis odio molestie, vehicula tristique nisl vehicula. Fusce molestie vestibulum nisi, ut sagittis sapien imperdiet viverra. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum mattis, nunc sit amet molestie finibus, urna mi commodo augue, sit amet tempus turpis eros efficitur dolor. In rhoncus urna diam, in finibus elit molestie sed. Nulla facilisi."
+    },
+    {
+      "id": 2,
+      "postTitle": "How to learn python?",
+      "postImage": "https://source.unsplash.com/random/1968x1201",
+      "postCategory": ["coding"],
+      "postReadingTime": 5,
+      "postAuthor": "Umar Bashir",
+      "postCreated": "Sun Aug 14 2022 13:52:49 GMT+0530 (India Standard Time)",
+      "postDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rhoncus egestas leo, quis luctus ex semper nec. Morbi vitae elementum libero. Curabitur massa nisi, venenatis quis dolor id, tristique fermentum ex. Integer odio diam, rutrum ac quam id, placerat scelerisque elit. Maecenas vehicula vulputate mauris, ut dapibus ipsum auctor ut. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse eget consectetur ex, non porttitor erat. Donec pellentesque tellus risus. Vestibulum interdum sit amet lectus eu interdum. Integer sed nulla vitae quam mattis posuere et vitae erat. In sodales sem quis odio molestie, vehicula tristique nisl vehicula. Fusce molestie vestibulum nisi, ut sagittis sapien imperdiet viverra. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum mattis, nunc sit amet molestie finibus, urna mi commodo augue, sit amet tempus turpis eros efficitur dolor. In rhoncus urna diam, in finibus elit molestie sed. Nulla facilisi."
+    },
+    {
+      "id": 3,
+      "postTitle": "How to learn javascript?",
+      "postImage": "https://source.unsplash.com/random/1968x1200",
+      "postCategory": ["featured"],
+      "postReadingTime": 2,
+      "postAuthor": "Admin",
+      "postCreated": "Sun Aug 14 2022 13:52:49 GMT+0530 (India Standard Time)",
+      "postDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rhoncus egestas leo, quis luctus ex semper nec. Morbi vitae elementum libero. Curabitur massa nisi, venenatis quis dolor id, tristique fermentum ex. Integer odio diam, rutrum ac quam id, placerat scelerisque elit. Maecenas vehicula vulputate mauris, ut dapibus ipsum auctor ut. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse eget consectetur ex, non porttitor erat. Donec pellentesque tellus risus. Vestibulum interdum sit amet lectus eu interdum. Integer sed nulla vitae quam mattis posuere et vitae erat. In sodales sem quis odio molestie, vehicula tristique nisl vehicula. Fusce molestie vestibulum nisi, ut sagittis sapien imperdiet viverra. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum mattis, nunc sit amet molestie finibus, urna mi commodo augue, sit amet tempus turpis eros efficitur dolor. In rhoncus urna diam, in finibus elit molestie sed. Nulla facilisi."
+    }
+  ]
+}

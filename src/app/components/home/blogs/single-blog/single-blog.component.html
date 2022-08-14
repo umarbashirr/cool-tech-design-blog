@@ -1,0 +1,36 @@
+<article class="blog bg-white rounded-xl shadow-md p-4">
+  <figure>
+    <a routerLink="/posts/{{ post.id }}">
+      <img
+        src="{{ post.postImage }}"
+        alt="{{ post.postTitle }}"
+        class="rounded-xl"
+      />
+    </a>
+  </figure>
+  <div class="card-body mt-4">
+    <a routerLink="/posts/{{ post.id }}" class="text-[28px] font-bold">{{
+      post.postTitle
+    }}</a>
+    <p class="author">
+      Posted by {{ post.postAuthor }} |
+      {{ post.postCreated | date: "MMM d, y" }}
+    </p>
+    <p class="description mt-2 text-gray-500">
+      {{ post.postDescription | slice: 0:200 }}...
+    </p>
+    <footer class="mt-4 flex justify-between items-center">
+      <div class="categories-container space-x-2">
+        <div
+          *ngFor="let category of post.postCategory"
+          class="bg-indigo-600 px-2 py-1 rounded shadow-sm inline-flex text-white uppercase font-semibold text-sm"
+        >
+          {{ category }}
+        </div>
+      </div>
+      <div>
+        <p>{{ post.postReadingTime | numberTransform }} mins read</p>
+      </div>
+    </footer>
+  </div>
+</article>
