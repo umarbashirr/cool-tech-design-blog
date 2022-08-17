@@ -11,9 +11,7 @@ export class AppComponent implements OnInit {
   title = 'frontend';
   Posts: any = [];
 
-  constructor(public postApi: PostServiceService, public router: Router) {
-    console.log(this.Posts);
-  }
+  constructor(public postApi: PostServiceService, public router: Router) {}
 
   ngOnInit(): void {
     this.loadPosts();

@@ -1,8 +1,8 @@
 export class Post {
-  id: Number | undefined;
+  id: String | undefined;
   postTitle: string | undefined;
   postImage: string | undefined;
-  postCategory: String[] | undefined;
+  postCategory: any;
   postReadingTime: Number | undefined;
   postAuthor: String | undefined;
   postCreated: Date | undefined;

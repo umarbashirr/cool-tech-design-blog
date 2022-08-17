@@ -1,13 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
-import { Post } from 'src/app/models/post';
+import { User } from 'src/app/models/user';
 
 @Injectable({
   providedIn: 'root',
 })
-export class PostServiceService {
-  apiURL = 'http://localhost:3500/posts';
+export class UserService {
+  baseUrl = 'http://localhost:3500/users';
 
   constructor(private http: HttpClient) {}
 
@@ -18,23 +18,9 @@ export class PostServiceService {
     }),
   };
 
-  // Fetch Posts
-  getPosts(): Observable<Post> {
+  addUser(user: any): Observable<User> {
     return this.http
-      .get<Post>(`${this.apiURL}`)
-      .pipe(retry(1), catchError(this.handleError));
-  }
-
-  // Fetch Posts by Id
-  getPostsById(id: any): Observable<Post> {
-    return this.http
-      .get<Post>(`${this.apiURL}/${id}`)
-      .pipe(retry(1), catchError(this.handleError));
-  }
-
-  addNewPost(post: Post): Observable<Post> {
-    return this.http
-      .post<Post>(this.apiURL, post, this.httpOptions)
+      .post<User>(this.baseUrl, user, this.httpOptions)
       .pipe(retry(1), catchError(this.handleError));
   }
 

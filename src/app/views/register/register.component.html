@@ -1,22 +1,27 @@
 <app-page-hero pageName="Register"></app-page-hero>
-<section class="update-post-section my-10 md:my-20">
+<section class="update-post-section my-10 md:my-20 relative">
+  <div class="absolute w-[500px] -top-16 -right-40" *ngIf="toast?.isActive">
+    <app-toaster [toast]="toast"></app-toaster>
+  </div>
   <div class="container mx-auto">
     <div
       class="post-form w-full max-w-[800px] rounded-xl shadow-md p-8 mx-auto"
     >
-      <form>
+      <form (submit)="registerFormSubmitHandler($event)">
         <div class="mb-6">
           <label
-            for="email"
+            for="fullName"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
             >Your Name</label
           >
           <input
             type="text"
-            id="email"
+            id="fullName"
+            name="fullName"
             class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
             placeholder="John Doe"
-            required=""
+            [(ngModel)]="user.fullName"
+            required
           />
         </div>
         <div class="mb-6">
@@ -28,9 +33,11 @@
           <input
             type="email"
             id="email"
+            name="email"
             class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-            placeholder="name@flowbite.com"
-            required=""
+            placeholder="johndoe@example.com"
+            required
+            [(ngModel)]="user.email"
           />
         </div>
         <div class="mb-6">
@@ -42,9 +49,11 @@
           <input
             type="password"
             id="password"
+            name="password"
             class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
             required=""
             placeholder="*********"
+            [(ngModel)]="user.password"
           />
         </div>
         <div class="mb-6">
@@ -56,8 +65,10 @@
           <input
             type="password"
             id="repeat-password"
+            name="repeatPassword"
             class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-            required=""
+            required
+            [(ngModel)]="user.repeatPassword"
             placeholder="*********"
           />
         </div>

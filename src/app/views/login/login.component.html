@@ -1,10 +1,10 @@
-<app-page-hero pageName="Register"></app-page-hero>
+<app-page-hero pageName="Login"></app-page-hero>
 <section class="update-post-section my-10 md:my-20">
   <div class="container mx-auto">
     <div
       class="post-form w-full max-w-[800px] rounded-xl shadow-md p-8 mt-10 mx-auto"
     >
-      <form>
+      <form (submit)="loginFormSubmitHandler($event)">
         <div class="mb-6">
           <label
             for="email"
@@ -16,7 +16,9 @@
             id="email"
             class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
             placeholder="name@flowbite.com"
-            required=""
+            required="true"
+            name="email"
+            [(ngModel)]="user.email"
           />
         </div>
         <div class="mb-6">
@@ -28,9 +30,11 @@
           <input
             type="password"
             id="password"
+            name="password"
             class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-            required=""
+            required="true"
             placeholder="*********"
+            [(ngModel)]="user.password"
           />
         </div>
         <div class="flex items-start mb-6">

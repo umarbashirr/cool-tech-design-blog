@@ -19,6 +19,8 @@ import { RegisterComponent } from './views/register/register.component';
 import { LoginComponent } from './views/login/login.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NumberTransformPipe } from './pipes/number-transform.pipe';
+import { FormsModule } from '@angular/forms';
+import { ToasterComponent } from './components/toaster/toaster.component';
 
 @NgModule({
   declarations: [
@@ -38,12 +40,14 @@ import { NumberTransformPipe } from './pipes/number-transform.pipe';
     RegisterComponent,
     LoginComponent,
     NumberTransformPipe,
+    ToasterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

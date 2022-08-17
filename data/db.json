@@ -4,7 +4,10 @@
       "id": 1,
       "postTitle": "How to learn react?",
       "postImage": "https://source.unsplash.com/random/1968x1202",
-      "postCategory": ["coding", "featured"],
+      "postCategory": [
+        "coding",
+        "featured"
+      ],
       "postReadingTime": 3,
       "postAuthor": "Admin",
       "postCreated": "Sun Aug 14 2022 13:52:49 GMT+0530 (India Standard Time)",
@@ -14,7 +17,9 @@
       "id": 2,
       "postTitle": "How to learn python?",
       "postImage": "https://source.unsplash.com/random/1968x1201",
-      "postCategory": ["coding"],
+      "postCategory": [
+        "coding"
+      ],
       "postReadingTime": 5,
       "postAuthor": "Umar Bashir",
       "postCreated": "Sun Aug 14 2022 13:52:49 GMT+0530 (India Standard Time)",
@@ -24,11 +29,118 @@
       "id": 3,
       "postTitle": "How to learn javascript?",
       "postImage": "https://source.unsplash.com/random/1968x1200",
-      "postCategory": ["featured"],
+      "postCategory": [
+        "featured"
+      ],
       "postReadingTime": 2,
       "postAuthor": "Admin",
       "postCreated": "Sun Aug 14 2022 13:52:49 GMT+0530 (India Standard Time)",
       "postDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rhoncus egestas leo, quis luctus ex semper nec. Morbi vitae elementum libero. Curabitur massa nisi, venenatis quis dolor id, tristique fermentum ex. Integer odio diam, rutrum ac quam id, placerat scelerisque elit. Maecenas vehicula vulputate mauris, ut dapibus ipsum auctor ut. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse eget consectetur ex, non porttitor erat. Donec pellentesque tellus risus. Vestibulum interdum sit amet lectus eu interdum. Integer sed nulla vitae quam mattis posuere et vitae erat. In sodales sem quis odio molestie, vehicula tristique nisl vehicula. Fusce molestie vestibulum nisi, ut sagittis sapien imperdiet viverra. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum mattis, nunc sit amet molestie finibus, urna mi commodo augue, sit amet tempus turpis eros efficitur dolor. In rhoncus urna diam, in finibus elit molestie sed. Nulla facilisi."
+    }
+  ],
+  "users": [
+    {
+      "id": "e69bb21b-ea3e-4a9f-8c04-03b74c3c5177",
+      "fullName": "Umar",
+      "email": "umarbashir93@outlook.com",
+      "password": "Umar@1993",
+      "repeatPassword": "Umar@1993"
+    },
+    {
+      "id": "bc057382-931f-48de-8448-16d9c0b670a0",
+      "fullName": "Usman Bashir",
+      "email": "hammadbashir314@gmail.com",
+      "password": "Umar@1993",
+      "repeatPassword": "Umar@1993"
+    },
+    {
+      "id": "437a47c6-5454-46c8-bf73-57ae9c714810",
+      "fullName": "umar bashir",
+      "email": "umarbashir601@gmail.com",
+      "password": "umi12393",
+      "repeatPassword": "umi12393",
+      "createdAt": "2022-08-14T13:30:52.359Z",
+      "updatedAt": "2022-08-14T13:30:52.359Z"
+    },
+    {
+      "id": "ff1c251e-28a8-4aab-8c24-e1ccd593e7b3",
+      "fullName": "Umar",
+      "email": "umarbashir601@gmail.com",
+      "password": "Umar@1993",
+      "repeatPassword": "Umar@1993",
+      "createdAt": "2022-08-17T15:51:52.964Z",
+      "updatedAt": "2022-08-17T15:51:52.964Z"
+    },
+    {
+      "id": "2bdcf520-f8cf-4ce7-a66e-03c57398717b",
+      "fullName": "Umar",
+      "email": "umarbashir93@outlook.com",
+      "password": "1234",
+      "repeatPassword": "1234",
+      "createdAt": "2022-08-17T15:53:14.344Z",
+      "updatedAt": "2022-08-17T15:53:14.344Z"
+    },
+    {
+      "id": "5f2b4a5e-74c0-4ad1-ada0-6621ca9f011d",
+      "fullName": "Umar Bashir",
+      "email": "cyberonlinejob655@gmail.com",
+      "password": "1234",
+      "repeatPassword": "1234",
+      "createdAt": "2022-08-17T15:54:42.468Z",
+      "updatedAt": "2022-08-17T15:54:42.468Z"
+    },
+    {
+      "id": "abfe03c2-e643-47a4-a11d-76327f28c6ea",
+      "fullName": "Umar",
+      "email": "umar.bashir@staybloom.com",
+      "password": "1234",
+      "repeatPassword": "1234",
+      "createdAt": "2022-08-17T15:57:33.335Z",
+      "updatedAt": "2022-08-17T15:57:33.335Z"
+    },
+    {
+      "id": "7a271ac4-2e7b-4c13-8b5d-8f471341b8f3",
+      "fullName": "Umar",
+      "email": "umar.bashir@staybloom.com",
+      "password": "1234",
+      "repeatPassword": "1234",
+      "createdAt": "2022-08-17T15:58:25.711Z",
+      "updatedAt": "2022-08-17T15:58:25.711Z"
+    },
+    {
+      "id": "4b341e2a-a3fe-4e57-a072-7a3e9c3853e5",
+      "fullName": "Faizan",
+      "email": "faizan@gmail.com",
+      "password": "123",
+      "repeatPassword": "123",
+      "createdAt": "2022-08-17T15:59:22.626Z",
+      "updatedAt": "2022-08-17T15:59:22.626Z"
+    },
+    {
+      "id": "caa83d6d-d708-4e07-b654-7e80045cc7e5",
+      "fullName": "Umar",
+      "email": "umarbashir93@outlook.com",
+      "password": "1234",
+      "repeatPassword": "1234",
+      "createdAt": "2022-08-17T16:03:04.534Z",
+      "updatedAt": "2022-08-17T16:03:04.534Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "coding",
+      "checked": false
+    },
+    {
+      "id": "2",
+      "name": "fashion",
+      "checked": false
+    },
+    {
+      "id": "3",
+      "name": "featured",
+      "checked": false
     }
   ]
 }
