@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { TokenStorageService } from '../services/token-storage.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,20 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 export class NavbarComponent implements OnInit {
   public faBars = faBars;
 
-  constructor() {}
+  isLoggedIn = true;
 
-  ngOnInit(): void {}
+  constructor(private tokenStorage: TokenStorageService) {}
+
+  ngOnInit(): void {
+    if (this.tokenStorage.getToken() !== null) {
+      this.isLoggedIn = true;
+    } else {
+      this.isLoggedIn = false;
+    }
+  }
+
+  logout(): void {
+    this.tokenStorage.signOut();
+    window.location.reload();
+  }
 }

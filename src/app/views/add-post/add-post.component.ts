@@ -57,9 +57,9 @@ export class AddPostComponent implements OnInit {
       return console.log('Missing Fields!');
     }
 
-    this.postService.addNewPost(this.post).subscribe((response) => {
-      console.log(response, 'Post Added');
-    });
+    // this.postService.addNewPost(this.post).subscribe((response) => {
+    //   console.log(response, 'Post Added');
+    // });
 
     this.post = this.initialState;
   }

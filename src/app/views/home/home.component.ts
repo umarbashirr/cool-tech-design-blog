@@ -15,12 +15,12 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadPosts();
+    // this.loadPosts();
   }
 
-  loadPosts() {
-    this.postApi.getPosts().subscribe((data: {}) => {
-      this.Posts = data;
-    });
-  }
+  // loadPosts() {
+  //   this.postApi.getPosts().subscribe((data: {}) => {
+  //     this.Posts = data;
+  //   });
+  // }
 }

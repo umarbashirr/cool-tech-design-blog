@@ -18,38 +18,38 @@ export class PostServiceService {
     }),
   };
 
-  // Fetch Posts
-  getPosts(): Observable<Post> {
-    return this.http
-      .get<Post>(`${this.apiURL}`)
-      .pipe(retry(1), catchError(this.handleError));
-  }
+  // // Fetch Posts
+  // getPosts(): Observable<Post> {
+  //   return this.http
+  //     .get<Post>(`${this.apiURL}`)
+  //     .pipe(retry(1), catchError(this.handleError));
+  // }
 
-  // Fetch Posts by Id
-  getPostsById(id: any): Observable<Post> {
-    return this.http
-      .get<Post>(`${this.apiURL}/${id}`)
-      .pipe(retry(1), catchError(this.handleError));
-  }
+  // // Fetch Posts by Id
+  // getPostsById(id: any): Observable<Post> {
+  //   return this.http
+  //     .get<Post>(`${this.apiURL}/${id}`)
+  //     .pipe(retry(1), catchError(this.handleError));
+  // }
 
-  addNewPost(post: Post): Observable<Post> {
-    return this.http
-      .post<Post>(this.apiURL, post, this.httpOptions)
-      .pipe(retry(1), catchError(this.handleError));
-  }
+  // addNewPost(post: Post): Observable<Post> {
+  //   return this.http
+  //     .post<Post>(this.apiURL, post, this.httpOptions)
+  //     .pipe(retry(1), catchError(this.handleError));
+  // }
 
-  handleError(error: any) {
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
-      // Get client-side error
-      errorMessage = error.error.message;
-    } else {
-      // Get server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    window.alert(errorMessage);
-    return throwError(() => {
-      return errorMessage;
-    });
-  }
+  // handleError(error: any) {
+  //   let errorMessage = '';
+  //   if (error.error instanceof ErrorEvent) {
+  //     // Get client-side error
+  //     errorMessage = error.error.message;
+  //   } else {
+  //     // Get server-side error
+  //     errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+  //   }
+  //   window.alert(errorMessage);
+  //   return throwError(() => {
+  //     return errorMessage;
+  //   });
+  // }
 }

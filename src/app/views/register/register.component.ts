@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { Toast } from 'src/app/models/toast';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user/user.service';
-import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-register',
@@ -13,15 +12,13 @@ import { v4 as uuidv4 } from 'uuid';
 export class RegisterComponent {
   public users: User[] = [];
   toast: Toast | undefined;
+  responseData: any;
 
   public user: User = {
-    id: uuidv4(),
-    fullName: '',
+    name: '',
     email: '',
     password: '',
     repeatPassword: '',
-    createdAt: new Date(),
-    updatedAt: new Date(),
   };
 
   constructor(public userApi: UserService, private router: Router) {}
@@ -30,9 +27,9 @@ export class RegisterComponent {
     // Stop browser from redirecting on submittion
     event.preventDefault();
     // Destructuring of User Data
-    const { fullName, email, password, repeatPassword } = this.user;
+    const { name, email, password, repeatPassword } = this.user;
     // Check if any of the field is empty
-    if (!fullName || !email || !password || !repeatPassword) {
+    if (!name || !email || !password || !repeatPassword) {
       // console.log('Missing Fields!');
       return (this.toast = {
         isActive: true,
@@ -48,28 +45,34 @@ export class RegisterComponent {
       });
     }
     // Subscribing to User Api and Sending User data to database
-    this.userApi.addUser(this.user).subscribe((response) => {
-      return console.log(response, 'User Added');
+    this.userApi.addUser(this.user).subscribe({
+      next: (response) => {
+        this.responseData = response.message;
+        this.toast = {
+          isActive: true,
+          message: this.responseData,
+        };
+        // reseting user data
+        this.user = {
+          name: '',
+          email: '',
+          password: '',
+          repeatPassword: '',
+        };
+
+        return setTimeout(() => {
+          this.router.navigateByUrl('login');
+        }, 4000);
+      },
+      error: (error) => {
+        this.responseData = error.error.message;
+        return (this.toast = {
+          isActive: true,
+          message: this.responseData,
+        });
+      },
     });
 
-    this.toast = {
-      isActive: true,
-      message: 'Your account has been created successfully!',
-    };
-
-    // reseting user data
-    this.user = {
-      id: '',
-      fullName: '',
-      email: '',
-      password: '',
-      repeatPassword: '',
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    };
-
-    return setTimeout(() => {
-      this.router.navigateByUrl('login');
-    }, 4000);
+    return this.responseData;
   }
 }

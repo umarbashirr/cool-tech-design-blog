@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
@@ -12,14 +12,23 @@ export class LoginComponent implements OnInit {
     email: '',
     password: '',
   };
-  toast = {
+  public toast = {
     isActive: true,
     message: 'Missing Fields!',
   };
+  isLoginFailed: Boolean = false;
+  isLoggedIn: Boolean = false;
 
-  constructor(public userApi: UserService, private router: Router) {}
+  constructor(
+    public userApi: UserService,
+    private tokenStorage: TokenStorageService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
+    }
+  }
 
   loginFormSubmitHandler(event: any) {
     // Stop browser from redirecting on submittion
@@ -36,23 +45,36 @@ export class LoginComponent implements OnInit {
     }
 
     // Subscribing to User Api and Sending User data to database
-    this.userApi.addUser(this.user).subscribe((response) => {
-      return console.log(response, 'User Added');
+    this.userApi.loginUser(this.user).subscribe({
+      next: (data) => {
+        console.log(data);
+        this.tokenStorage.saveToken(data.userResult.token);
+        this.tokenStorage.saveUser(data.userResult);
+        this.toast = {
+          isActive: true,
+          message: data.message,
+        };
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        // reseting user data
+        this.user = {
+          email: '',
+          password: '',
+        };
+        this.reloadPage();
+      },
+      error: (err) => {
+        this.isLoginFailed = true;
+        this.toast = {
+          isActive: true,
+          message: err.error.message,
+        };
+      },
     });
 
-    this.toast = {
-      isActive: true,
-      message: 'Login Successfully',
-    };
-
-    // reseting user data
-    this.user = {
-      email: '',
-      password: '',
-    };
-
-    return setTimeout(() => {
-      this.router.navigateByUrl('/');
-    }, 2000);
+    return this.user;
+  }
+  reloadPage(): void {
+    window.location.reload();
   }
 }

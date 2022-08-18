@@ -1,13 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, retry, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 import { User } from 'src/app/models/user';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  baseUrl = 'http://localhost:3500/users';
+  baseUrl = 'http://localhost:3500/api/v1';
 
   constructor(private http: HttpClient) {}
 
@@ -18,24 +18,19 @@ export class UserService {
     }),
   };
 
-  addUser(user: any): Observable<User> {
-    return this.http
-      .post<User>(this.baseUrl, user, this.httpOptions)
-      .pipe(retry(1), catchError(this.handleError));
+  addUser(user: any): Observable<any> {
+    return this.http.post<User>(
+      `${this.baseUrl}/auth/register`,
+      user,
+      this.httpOptions
+    );
   }
 
-  handleError(error: any) {
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
-      // Get client-side error
-      errorMessage = error.error.message;
-    } else {
-      // Get server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    window.alert(errorMessage);
-    return throwError(() => {
-      return errorMessage;
-    });
+  loginUser(user: any): Observable<any> {
+    return this.http.post<any>(
+      `${this.baseUrl}/auth/login`,
+      user,
+      this.httpOptions
+    );
   }
 }

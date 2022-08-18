@@ -1,5 +1,8 @@
 <app-page-hero pageName="Login"></app-page-hero>
-<section class="update-post-section my-10 md:my-20">
+<section class="update-post-section my-10 md:my-20 relative">
+  <div class="absolute w-[500px] -top-16 -right-40" *ngIf="toast?.isActive">
+    <app-toaster [toast]="toast"></app-toaster>
+  </div>
   <div class="container mx-auto">
     <div
       class="post-form w-full max-w-[800px] rounded-xl shadow-md p-8 mt-10 mx-auto"

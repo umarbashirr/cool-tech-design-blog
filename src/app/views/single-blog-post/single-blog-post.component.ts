@@ -29,16 +29,16 @@ export class SingleBlogPostComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id');
-    this.loadPosts();
-    setTimeout(() => {
-      this.loading = false;
-    }, 2000);
+    // this.id = this.route.snapshot.paramMap.get('id');
+    // this.loadPosts();
+    // setTimeout(() => {
+    //   this.loading = false;
+    // }, 2000);
   }
 
-  loadPosts() {
-    this.postApi.getPostsById(this.id).subscribe((data: any) => {
-      this.Post = data;
-    });
-  }
+  // loadPosts() {
+  //   this.postApi.getPostsById(this.id).subscribe((data: any) => {
+  //     this.Post = data;
+  //   });
+  // }
 }

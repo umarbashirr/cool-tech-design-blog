@@ -13,13 +13,5 @@ export class AppComponent implements OnInit {
 
   constructor(public postApi: PostServiceService, public router: Router) {}
 
-  ngOnInit(): void {
-    this.loadPosts();
-  }
-
-  loadPosts() {
-    this.postApi.getPosts().subscribe((data: {}) => {
-      this.Posts = data;
-    });
-  }
+  ngOnInit(): void {}
 }
